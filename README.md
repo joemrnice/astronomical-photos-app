@@ -1,6 +1,6 @@
 # Astronomical Photos App :milky_way:
 
-![Banner Image](./public/assets/nasaphotos.png)
+![Banner Image](./frontend/public/nasaphotos.png)
 
 A web application for exploring stunning astronomical photos from NASA's APOD (Astronomy Picture of the Day) API or other space-related sources. Discover the cosmos with daily updates, searchable archives, and high-resolution imagery.
 
