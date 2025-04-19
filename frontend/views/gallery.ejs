@@ -1,0 +1,26 @@
+    <%- include('partials/header') %>
+
+  <div class="container mx-auto p-4">
+    <h1 class="text-3xl font-bold mb-6 text-center">NASA || Astronomical Photos || Daily Collections</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <% apodData.forEach(entry => { %>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+          <a href="/detail/<%= entry.date %>">
+            <% if (entry.media_type === 'image') { %>
+              <img src="<%= entry.url %>" alt="<%= entry.title %>" class="w-full h-48 object-cover">
+            <% } else if (entry.media_type === 'video') { %>
+              <video src="<%= entry.thumbnail_url %>" alt="<%= entry.title %>" class="w-full h-48 object-cover" controls>
+              <p class="text-center text-sm text-gray-500">Video</p>
+            </video>
+            <% } %>
+          </a>
+          <div class="p-4">
+            <h2 class="text-xl font-semibold truncate"><%= entry.title %></h2>
+            <p class="text-gray-600"><%= entry.date %></p>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+    <%- include('partials/footer') %>

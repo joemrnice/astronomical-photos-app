@@ -1,0 +1,16 @@
+
+<%- include('partials/header') %>
+
+<div class="container mx-auto p-4">
+    <a href="/" class="text-blue-500 hover:underline mb-4 inline-block">&larr; Back to Gallery</a>
+    <h1 class="text-3xl font-bold mb-2"><%= entry.title %></h1>
+    <p class="text-gray-600 mb-4"><%= entry.date %></p>
+    <% if (entry.media_type === 'image') { %>
+      <img src="<%= entry.hdurl || entry.url %>" alt="<%= entry.title %>" class="w-full max-w-2xl h-auto rounded-lg shadow-md mb-4">
+    <% } else if (entry.media_type === 'video') { %>
+      <iframe width="100%" height="400" src="<%= entry.url %>" frameborder="0" allowfullscreen class="rounded-lg shadow-md mb-4"></iframe>
+    <% } %>
+    <p class="text-gray-800 leading-relaxed"><%= entry.explanation %></p>
+  </div>
+
+    <%- include('partials/footer') %>
